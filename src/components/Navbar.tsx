@@ -53,8 +53,8 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenBooking }) => {
       <header
         className={`fixed top-0 left-0 right-0 z-40 transition-all duration-500 ${
           scrolled
-            ? 'bg-[#F7F3EC]/95 backdrop-blur-md shadow-sm border-b border-[#D8C7A6]/40 py-3.5 text-[#12343B]'
-            : 'bg-gradient-to-b from-[#12343B]/80 via-[#12343B]/30 to-transparent py-5 text-white'
+            ? 'bg-[#F7F3EC]/98 backdrop-blur-md shadow-md border-b border-[#D8C7A6]/70 py-3 text-[#0B2126]'
+            : 'bg-gradient-to-b from-[#0B2126]/90 via-[#0B2126]/40 to-transparent py-5 text-white'
         }`}
       >
         <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 flex items-center justify-between">
@@ -66,13 +66,19 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenBooking }) => {
             id="brand-logo-link"
           >
             <div className="flex items-center gap-2">
-              <span className="font-serif-luxury text-2xl sm:text-3xl tracking-[0.25em] font-medium uppercase transition-colors group-hover:text-[#B99A5B]">
+              <span
+                className={`font-serif-luxury text-2xl sm:text-3xl tracking-[0.25em] font-semibold uppercase transition-colors ${
+                  scrolled
+                    ? 'text-[#0B2126] group-hover:text-[#8C6D32]'
+                    : 'text-white group-hover:text-[#D8C7A6] drop-shadow'
+                }`}
+              >
                 AZUREA
               </span>
             </div>
             <span
-              className={`text-[9px] sm:text-[10px] tracking-[0.3em] uppercase transition-colors ${
-                scrolled ? 'text-[#12343B]/70' : 'text-white/80'
+              className={`text-[9px] sm:text-[10px] tracking-[0.3em] uppercase font-semibold transition-colors ${
+                scrolled ? 'text-[#12343B]' : 'text-white/95 drop-shadow-sm'
               }`}
             >
               {isRtl ? 'منتجع ساحلي خاص' : 'Private Coastal Resort'}
@@ -80,14 +86,16 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenBooking }) => {
           </a>
 
           {/* Desktop Navigation Links */}
-          <nav className="hidden lg:flex items-center gap-7 text-[13px] tracking-[0.14em] uppercase font-medium">
+          <nav className="hidden lg:flex items-center gap-7 text-[13px] tracking-[0.16em] uppercase font-semibold">
             {navLinks.map((link) => (
               <a
                 key={link.href}
                 href={link.href}
                 onClick={(e) => handleNavClick(e, link.href)}
-                className={`relative py-1 transition-all duration-300 hover:text-[#B99A5B] ${
-                  scrolled ? 'text-[#12343B]/80 hover:text-[#B99A5B]' : 'text-white/90 hover:text-white'
+                className={`relative py-1 transition-all duration-200 ${
+                  scrolled
+                    ? 'text-[#0B2126] hover:text-[#8C6D32]'
+                    : 'text-white hover:text-[#D8C7A6] drop-shadow-sm'
                 }`}
               >
                 {link.label}
@@ -99,10 +107,10 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenBooking }) => {
           <div className="hidden sm:flex items-center gap-5">
             {/* Language Switcher */}
             <div
-              className={`flex items-center gap-1.5 px-2.5 py-1 rounded-full border text-[11px] tracking-wider font-semibold transition-all ${
+              className={`flex items-center gap-1.5 px-3 py-1 rounded-full border text-[11px] tracking-wider font-bold transition-all ${
                 scrolled
-                  ? 'border-[#D8C7A6] bg-white/70 text-[#12343B]'
-                  : 'border-white/30 bg-black/20 text-white backdrop-blur-sm'
+                  ? 'border-[#12343B]/40 bg-white text-[#0B2126] shadow-xs'
+                  : 'border-white/50 bg-[#0B2126]/60 text-white backdrop-blur-sm'
               }`}
             >
               <Globe className="w-3.5 h-3.5 text-[#B99A5B]" />
@@ -111,8 +119,12 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenBooking }) => {
                 onClick={() => setLanguage('en')}
                 className={`px-1.5 py-0.5 rounded transition-colors ${
                   language === 'en'
-                    ? 'text-[#B99A5B] font-bold'
-                    : 'opacity-70 hover:opacity-100'
+                    ? scrolled
+                      ? 'text-[#0B2126] bg-[#D8C7A6]/40 font-extrabold'
+                      : 'text-white bg-white/25 font-extrabold'
+                    : scrolled
+                    ? 'text-[#12343B]/80 hover:text-[#0B2126]'
+                    : 'text-white/80 hover:text-white'
                 }`}
                 aria-label="Switch to English"
               >
@@ -124,8 +136,12 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenBooking }) => {
                 onClick={() => setLanguage('ar')}
                 className={`px-1.5 py-0.5 rounded transition-colors ${
                   language === 'ar'
-                    ? 'text-[#B99A5B] font-bold'
-                    : 'opacity-70 hover:opacity-100'
+                    ? scrolled
+                      ? 'text-[#0B2126] bg-[#D8C7A6]/40 font-extrabold'
+                      : 'text-white bg-white/25 font-extrabold'
+                    : scrolled
+                    ? 'text-[#12343B]/80 hover:text-[#0B2126]'
+                    : 'text-white/80 hover:text-white'
                 }`}
                 aria-label="التبديل إلى العربية"
               >
@@ -138,7 +154,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenBooking }) => {
               type="button"
               id="nav-book-stay-button"
               onClick={() => onOpenBooking()}
-              className="px-5 py-2.5 bg-[#12343B] text-[#F7F3EC] hover:bg-[#1a464f] text-[11px] font-medium tracking-[0.2em] uppercase border border-[#B99A5B]/60 transition-all duration-300 hover:border-[#B99A5B] hover:shadow-md cursor-pointer whitespace-nowrap active:scale-95"
+              className="px-6 py-2.5 bg-[#0B2126] text-white hover:bg-[#1a464f] text-[11px] font-bold tracking-[0.22em] uppercase border border-[#B99A5B] transition-all duration-300 hover:shadow-lg cursor-pointer whitespace-nowrap active:scale-95 shadow-sm"
             >
               {t('bookYourStay')}
             </button>
@@ -148,10 +164,10 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenBooking }) => {
           <div className="flex items-center gap-3 lg:hidden">
             {/* Mobile language switch */}
             <div
-              className={`flex items-center gap-1 px-2 py-0.5 rounded text-[11px] font-medium border ${
+              className={`flex items-center gap-1 px-2.5 py-1 rounded text-[11px] font-bold border ${
                 scrolled
-                  ? 'border-[#D8C7A6] text-[#12343B]'
-                  : 'border-white/30 text-white'
+                  ? 'border-[#12343B]/40 bg-white text-[#0B2126]'
+                  : 'border-white/50 bg-[#0B2126]/60 text-white'
               }`}
             >
               <button
@@ -168,7 +184,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenBooking }) => {
               id="mobile-menu-toggle-btn"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               className={`p-2 transition-colors focus:outline-none ${
-                scrolled ? 'text-[#12343B]' : 'text-white'
+                scrolled ? 'text-[#0B2126]' : 'text-white drop-shadow'
               }`}
               aria-label="Toggle navigation menu"
             >

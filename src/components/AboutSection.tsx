@@ -12,13 +12,13 @@ export const AboutSection: React.FC = () => {
       <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
         {/* Editorial Heading */}
         <div className="flex flex-col items-center text-center mb-16 sm:mb-24">
-          <span className="text-[10px] tracking-[0.35em] uppercase text-[#B99A5B] font-semibold mb-3">
+          <span className="text-[11px] tracking-[0.35em] uppercase text-[#8C6D32] font-bold mb-3">
             {isAr ? 'عن منتجع أزوريا' : 'The Heritage'}
           </span>
-          <h2 className="font-serif-luxury text-3xl sm:text-5xl lg:text-6xl font-normal tracking-[0.06em] text-[#12343B] max-w-4xl">
+          <h2 className="font-serif-luxury text-3xl sm:text-5xl lg:text-6xl font-medium tracking-[0.06em] text-[#0B2126] max-w-4xl">
             {isAr ? ABOUT_CONTENT.headingAr : ABOUT_CONTENT.headingEn}
           </h2>
-          <div className="w-16 h-[1px] bg-[#B99A5B]/60 mt-6" />
+          <div className="w-16 h-[1.5px] bg-[#8C6D32] mt-6" />
         </div>
 
         {/* Narrative & Architectural Showcase Grid */}
@@ -26,54 +26,54 @@ export const AboutSection: React.FC = () => {
           {/* Story Narrative on Left */}
           <div className="lg:col-span-6 space-y-8">
             <div className="space-y-4">
-              <span className="text-xs tracking-[0.25em] uppercase font-semibold text-[#B99A5B]">
+              <span className="text-xs tracking-[0.25em] uppercase font-bold text-[#8C6D32]">
                 {isAr ? ABOUT_CONTENT.subheadingAr : ABOUT_CONTENT.subheadingEn}
               </span>
-              <p className="font-serif-luxury italic text-xl sm:text-2xl text-[#12343B] leading-relaxed">
+              <p className="font-serif-luxury italic text-xl sm:text-2xl text-[#0B2126] font-medium leading-relaxed">
                 “{isAr ? ABOUT_CONTENT.introAr : ABOUT_CONTENT.introEn}”
               </p>
             </div>
 
-            <p className="text-sm sm:text-base text-[#12343B]/80 leading-relaxed font-light">
+            <p className="text-sm sm:text-base text-[#18383F] leading-relaxed font-normal">
               {isAr ? ABOUT_CONTENT.philosophyAr : ABOUT_CONTENT.philosophyEn}
             </p>
 
             {/* Sustainability Commitment Card */}
-            <div className="p-6 bg-white/70 border border-[#D8C7A6]/60 rounded-none space-y-3">
-              <div className="flex items-center gap-2.5 text-[#B99A5B]">
-                <Leaf className="w-4 h-4" />
-                <span className="text-xs tracking-[0.2em] uppercase font-semibold text-[#12343B]">
+            <div className="p-6 bg-white border-2 border-[#12343B]/15 shadow-sm space-y-3">
+              <div className="flex items-center gap-2.5 text-[#8C6D32]">
+                <Leaf className="w-5 h-5 text-[#8C6D32]" />
+                <span className="text-xs tracking-[0.2em] uppercase font-bold text-[#0B2126]">
                   {isAr ? 'استدامة بيئية ورعاية بحرية' : 'Sustainable Coastal Stewardship'}
                 </span>
               </div>
-              <p className="text-xs sm:text-sm text-[#12343B]/75 leading-relaxed font-light">
+              <p className="text-xs sm:text-sm text-[#18383F] leading-relaxed font-normal">
                 {isAr ? ABOUT_CONTENT.sustainabilityAr : ABOUT_CONTENT.sustainabilityEn}
               </p>
             </div>
 
             {/* Accolades & Recognition */}
-            <div className="grid grid-cols-2 sm:grid-cols-3 gap-6 pt-4 border-t border-[#D8C7A6]/50">
+            <div className="grid grid-cols-2 sm:grid-cols-3 gap-6 pt-4 border-t border-[#D8C7A6]">
               <div>
-                <span className="font-serif-luxury text-2xl sm:text-3xl font-semibold text-[#12343B]">
+                <span className="font-serif-luxury text-3xl sm:text-4xl font-bold text-[#0B2126]">
                   100%
                 </span>
-                <p className="text-[10px] tracking-wider uppercase text-[#12343B]/60 mt-1">
+                <p className="text-xs tracking-wider uppercase text-[#0B2126] font-bold mt-1">
                   {isAr ? 'طاقة شمسية نظيفة' : 'Solar Microgrid'}
                 </p>
               </div>
               <div>
-                <span className="font-serif-luxury text-2xl sm:text-3xl font-semibold text-[#12343B]">
+                <span className="font-serif-luxury text-3xl sm:text-4xl font-bold text-[#0B2126]">
                   32
                 </span>
-                <p className="text-[10px] tracking-wider uppercase text-[#12343B]/60 mt-1">
+                <p className="text-xs tracking-wider uppercase text-[#0B2126] font-bold mt-1">
                   {isAr ? 'أجنحة وفلل حصرية' : 'Exclusive Keys'}
                 </p>
               </div>
               <div>
-                <span className="font-serif-luxury text-2xl sm:text-3xl font-semibold text-[#12343B]">
+                <span className="font-serif-luxury text-3xl sm:text-4xl font-bold text-[#0B2126]">
                   2.4 km
                 </span>
-                <p className="text-[10px] tracking-wider uppercase text-[#12343B]/60 mt-1">
+                <p className="text-xs tracking-wider uppercase text-[#0B2126] font-bold mt-1">
                   {isAr ? 'ساحل طبيعي محمي' : 'Pristine Shoreline'}
                 </p>
               </div>
@@ -89,15 +89,15 @@ export const AboutSection: React.FC = () => {
                 className="w-full h-[480px] sm:h-[580px] object-cover transition-transform duration-1000 group-hover:scale-105"
                 loading="lazy"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#12343B]/60 via-transparent to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#0B2126]/70 via-transparent to-transparent" />
             </div>
 
             {/* Overlapping Floating Badge */}
-            <div className="absolute -bottom-6 -left-6 sm:bottom-8 sm:-left-8 bg-[#12343B] text-[#F7F3EC] p-6 border border-[#B99A5B]/60 shadow-2xl max-w-xs">
-              <span className="text-[9px] tracking-[0.3em] uppercase text-[#D8C7A6] block mb-1">
+            <div className="absolute -bottom-6 -left-6 sm:bottom-8 sm:-left-8 bg-[#0B2126] text-[#F7F3EC] p-6 border border-[#B99A5B] shadow-2xl max-w-xs">
+              <span className="text-[10px] tracking-[0.3em] uppercase text-[#D8C7A6] font-bold block mb-1">
                 {isAr ? 'فلسفة الضيافة' : 'Guiding Vision'}
               </span>
-              <p className="font-serif-luxury italic text-sm text-[#F7F3EC]">
+              <p className="font-serif-luxury italic text-sm text-white font-medium">
                 {isAr ? '«الهدوء هو أرفع أشكال الفخامة»' : '“True stillness is the highest form of refinement”'}
               </p>
             </div>

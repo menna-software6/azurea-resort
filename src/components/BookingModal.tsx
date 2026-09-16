@@ -167,21 +167,21 @@ export const BookingModal: React.FC<BookingModalProps> = ({
 
         {/* Stepper Progress Bar (Hidden on confirmation step) */}
         {step < 5 && (
-          <div className="bg-[#FFFFFF] border-b border-[#D8C7A6]/50 px-4 sm:px-8 py-3">
-            <div className="flex items-center justify-between text-[10px] sm:text-xs tracking-wider uppercase font-semibold text-[#12343B]">
-              <span className={step >= 1 ? 'text-[#B99A5B] font-bold' : 'text-[#12343B]/40'}>
+          <div className="bg-[#FFFFFF] border-b border-[#12343B]/15 px-4 sm:px-8 py-3.5">
+            <div className="flex items-center justify-between text-[11px] sm:text-xs tracking-wider uppercase font-bold text-[#0B2126]">
+              <span className={step >= 1 ? 'text-[#0B2126] font-bold underline underline-offset-4 decoration-[#8C6D32] decoration-2' : 'text-[#18383F]/40'}>
                 {t('stepDates')}
               </span>
-              <ChevronRight className="w-3.5 h-3.5 text-[#D8C7A6]" />
-              <span className={step >= 2 ? 'text-[#B99A5B] font-bold' : 'text-[#12343B]/40'}>
+              <ChevronRight className="w-4 h-4 text-[#8C6D32]" />
+              <span className={step >= 2 ? 'text-[#0B2126] font-bold underline underline-offset-4 decoration-[#8C6D32] decoration-2' : 'text-[#18383F]/40'}>
                 {t('stepRoom')}
               </span>
-              <ChevronRight className="w-3.5 h-3.5 text-[#D8C7A6]" />
-              <span className={step >= 3 ? 'text-[#B99A5B] font-bold' : 'text-[#12343B]/40'}>
+              <ChevronRight className="w-4 h-4 text-[#8C6D32]" />
+              <span className={step >= 3 ? 'text-[#0B2126] font-bold underline underline-offset-4 decoration-[#8C6D32] decoration-2' : 'text-[#18383F]/40'}>
                 {t('stepExtras')}
               </span>
-              <ChevronRight className="w-3.5 h-3.5 text-[#D8C7A6]" />
-              <span className={step >= 4 ? 'text-[#B99A5B] font-bold' : 'text-[#12343B]/40'}>
+              <ChevronRight className="w-4 h-4 text-[#8C6D32]" />
+              <span className={step >= 4 ? 'text-[#0B2126] font-bold underline underline-offset-4 decoration-[#8C6D32] decoration-2' : 'text-[#18383F]/40'}>
                 {t('stepDetails')}
               </span>
             </div>
@@ -194,18 +194,18 @@ export const BookingModal: React.FC<BookingModalProps> = ({
           {step === 1 && (
             <div className="space-y-6">
               <div>
-                <h3 className="font-serif-luxury text-2xl text-[#12343B] font-normal mb-1">
+                <h3 className="font-serif-luxury text-2xl sm:text-3xl text-[#0B2126] font-medium mb-1">
                   {isAr ? 'حدد تواريخ إقامتك وعدد الضيوف' : 'Choose Your Stay Window'}
                 </h3>
-                <p className="text-xs text-[#12343B]/70 font-light">
+                <p className="text-xs sm:text-sm text-[#18383F] font-normal">
                   {isAr ? 'استمتع بإقامة هادئة مع تسجيل وصول مرن' : 'Experience effortless coastal tranquility with flexible check-in times'}
                 </p>
               </div>
 
-              <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 p-6 bg-white border border-[#D8C7A6]/50">
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 p-6 bg-white border-2 border-[#12343B]/15 shadow-sm">
                 <div className="flex flex-col">
-                  <label className="text-[10px] tracking-[0.2em] uppercase font-semibold text-[#12343B]/70 mb-2 flex items-center gap-1.5">
-                    <Calendar className="w-3.5 h-3.5 text-[#B99A5B]" />
+                  <label className="text-xs tracking-[0.2em] uppercase font-bold text-[#0B2126] mb-2 flex items-center gap-1.5">
+                    <Calendar className="w-4 h-4 text-[#8C6D32]" />
                     {t('checkIn')}
                   </label>
                   <input
@@ -213,13 +213,13 @@ export const BookingModal: React.FC<BookingModalProps> = ({
                     id="modal-check-in-date"
                     value={checkIn}
                     onChange={(e) => setCheckIn(e.target.value)}
-                    className="p-3 bg-[#F7F3EC] border border-[#D8C7A6]/60 text-sm focus:outline-none focus:border-[#B99A5B]"
+                    className="p-3 bg-[#F7F3EC] border-2 border-[#12343B]/20 text-sm font-semibold text-[#0B2126] focus:outline-none focus:border-[#0B2126]"
                   />
                 </div>
 
                 <div className="flex flex-col">
-                  <label className="text-[10px] tracking-[0.2em] uppercase font-semibold text-[#12343B]/70 mb-2 flex items-center gap-1.5">
-                    <Calendar className="w-3.5 h-3.5 text-[#B99A5B]" />
+                  <label className="text-xs tracking-[0.2em] uppercase font-bold text-[#0B2126] mb-2 flex items-center gap-1.5">
+                    <Calendar className="w-4 h-4 text-[#8C6D32]" />
                     {t('checkOut')}
                   </label>
                   <input
@@ -227,20 +227,20 @@ export const BookingModal: React.FC<BookingModalProps> = ({
                     id="modal-check-out-date"
                     value={checkOut}
                     onChange={(e) => setCheckOut(e.target.value)}
-                    className="p-3 bg-[#F7F3EC] border border-[#D8C7A6]/60 text-sm focus:outline-none focus:border-[#B99A5B]"
+                    className="p-3 bg-[#F7F3EC] border-2 border-[#12343B]/20 text-sm font-semibold text-[#0B2126] focus:outline-none focus:border-[#0B2126]"
                   />
                 </div>
 
                 <div className="flex flex-col">
-                  <label className="text-[10px] tracking-[0.2em] uppercase font-semibold text-[#12343B]/70 mb-2 flex items-center gap-1.5">
-                    <Users className="w-3.5 h-3.5 text-[#B99A5B]" />
+                  <label className="text-xs tracking-[0.2em] uppercase font-bold text-[#0B2126] mb-2 flex items-center gap-1.5">
+                    <Users className="w-4 h-4 text-[#8C6D32]" />
                     {t('guests')}
                   </label>
                   <select
                     id="modal-guests-count"
                     value={guests}
                     onChange={(e) => setGuests(Number(e.target.value))}
-                    className="p-3 bg-[#F7F3EC] border border-[#D8C7A6]/60 text-sm focus:outline-none focus:border-[#B99A5B]"
+                    className="p-3 bg-[#F7F3EC] border-2 border-[#12343B]/20 text-sm font-semibold text-[#0B2126] focus:outline-none focus:border-[#0B2126]"
                   >
                     <option value={1}>1 {t('adults')}</option>
                     <option value={2}>2 {t('adults')}</option>
@@ -251,9 +251,9 @@ export const BookingModal: React.FC<BookingModalProps> = ({
                 </div>
               </div>
 
-              <div className="p-4 bg-white/70 border border-[#D8C7A6]/40 flex items-center justify-between text-xs text-[#12343B]/80">
-                <span>{t('nightsCount')}: <strong className="text-[#12343B] font-semibold">{nights}</strong></span>
-                <span className="text-[#B99A5B] font-medium">{isAr ? 'أدنى مدة إقامة ليلتان' : 'Minimum 2 nights recommended'}</span>
+              <div className="p-4 bg-white border-2 border-[#12343B]/15 flex items-center justify-between text-xs sm:text-sm text-[#0B2126] font-medium shadow-xs">
+                <span>{t('nightsCount')}: <strong className="text-[#0B2126] font-bold text-base">{nights}</strong></span>
+                <span className="text-[#8C6D32] font-bold">{isAr ? 'أدنى مدة إقامة ليلتان' : 'Minimum 2 nights recommended'}</span>
               </div>
             </div>
           )}
@@ -262,10 +262,10 @@ export const BookingModal: React.FC<BookingModalProps> = ({
           {step === 2 && (
             <div className="space-y-6">
               <div>
-                <h3 className="font-serif-luxury text-2xl text-[#12343B] font-normal mb-1">
+                <h3 className="font-serif-luxury text-2xl sm:text-3xl text-[#0B2126] font-medium mb-1">
                   {isAr ? 'اختر جناحك أو فيلتك الخاصة' : 'Select Your Sanctuary'}
                 </h3>
-                <p className="text-xs text-[#12343B]/70 font-light">
+                <p className="text-xs sm:text-sm text-[#18383F] font-normal">
                   {isAr ? 'جميع الأجنحة والفلل تتمتع بإطلالات مباشرة على البحر المتوسط' : 'All accommodations offer unobstructed Mediterranean vistas and bespoke luxury'}
                 </p>
               </div>
@@ -277,10 +277,10 @@ export const BookingModal: React.FC<BookingModalProps> = ({
                     <div
                       key={room.id}
                       onClick={() => setSelectedRoomId(room.id)}
-                      className={`p-4 sm:p-5 border transition-all duration-300 flex flex-col sm:flex-row gap-5 items-center cursor-pointer ${
+                      className={`p-4 sm:p-5 border-2 transition-all duration-300 flex flex-col sm:flex-row gap-5 items-center cursor-pointer ${
                         isSelected
-                          ? 'border-[#B99A5B] bg-white shadow-md ring-1 ring-[#B99A5B]'
-                          : 'border-[#D8C7A6]/60 bg-white/60 hover:bg-white hover:border-[#D8C7A6]'
+                          ? 'border-[#8C6D32] bg-white shadow-lg ring-2 ring-[#8C6D32]'
+                          : 'border-[#12343B]/15 bg-white hover:border-[#8C6D32] hover:shadow-md'
                       }`}
                     >
                       <img
@@ -290,17 +290,17 @@ export const BookingModal: React.FC<BookingModalProps> = ({
                       />
                       <div className="flex-grow space-y-1 text-center sm:text-left">
                         <div className="flex flex-col sm:flex-row sm:items-center justify-between">
-                          <h4 className="font-serif-luxury text-xl font-medium text-[#12343B]">
+                          <h4 className="font-serif-luxury text-xl sm:text-2xl font-bold text-[#0B2126]">
                             {isAr ? room.nameAr : room.name}
                           </h4>
-                          <span className="font-serif-luxury text-lg font-semibold text-[#12343B]">
-                            ${room.pricePerNight} <span className="text-xs text-[#12343B]/60 font-sans">{t('perNight')}</span>
+                          <span className="font-serif-luxury text-xl font-bold text-[#0B2126]">
+                            ${room.pricePerNight} <span className="text-xs text-[#18383F] font-sans font-semibold">{t('perNight')}</span>
                           </span>
                         </div>
-                        <p className="text-xs text-[#12343B]/75 line-clamp-1">
+                        <p className="text-xs sm:text-sm text-[#18383F] line-clamp-1 font-normal">
                           {isAr ? room.taglineAr : room.tagline}
                         </p>
-                        <div className="flex flex-wrap gap-4 text-[11px] text-[#12343B]/60 pt-1">
+                        <div className="flex flex-wrap gap-4 text-xs font-semibold text-[#0B2126] pt-1">
                           <span>{room.size}</span>
                           <span>•</span>
                           <span>{room.guests} {t('adults')}</span>
@@ -310,10 +310,10 @@ export const BookingModal: React.FC<BookingModalProps> = ({
                       </div>
                       <div className="shrink-0">
                         <div
-                          className={`w-6 h-6 rounded-full border flex items-center justify-center transition-colors ${
+                          className={`w-6 h-6 rounded-full border-2 flex items-center justify-center transition-colors ${
                             isSelected
-                              ? 'border-[#B99A5B] bg-[#B99A5B] text-white'
-                              : 'border-[#D8C7A6] bg-transparent'
+                              ? 'border-[#0B2126] bg-[#0B2126] text-white'
+                              : 'border-[#12343B]/40 bg-transparent'
                           }`}
                         >
                           {isSelected && <Check className="w-3.5 h-3.5" />}
@@ -330,10 +330,10 @@ export const BookingModal: React.FC<BookingModalProps> = ({
           {step === 3 && (
             <div className="space-y-6">
               <div>
-                <h3 className="font-serif-luxury text-2xl text-[#12343B] font-normal mb-1">
+                <h3 className="font-serif-luxury text-2xl sm:text-3xl text-[#0B2126] font-medium mb-1">
                   {isAr ? 'عزز إقامتك بامتيازات استثنائية' : 'Elevate Your Sanctuary Experience'}
                 </h3>
-                <p className="text-xs text-[#12343B]/70 font-light">
+                <p className="text-xs sm:text-sm text-[#18383F] font-normal">
                   {isAr ? 'خدمات إضافية منتقاة تمنحك أقصى درجات الراحة' : 'Optional bespoke privileges curated exclusively for your stay'}
                 </p>
               </div>
@@ -345,36 +345,36 @@ export const BookingModal: React.FC<BookingModalProps> = ({
                     <div
                       key={extra.id}
                       onClick={() => toggleExtra(extra.id)}
-                      className={`p-5 border transition-all duration-300 cursor-pointer flex flex-col justify-between ${
+                      className={`p-5 border-2 transition-all duration-300 cursor-pointer flex flex-col justify-between ${
                         isChecked
-                          ? 'border-[#B99A5B] bg-white shadow-md ring-1 ring-[#B99A5B]'
-                          : 'border-[#D8C7A6]/60 bg-white/70 hover:bg-white hover:border-[#D8C7A6]'
+                          ? 'border-[#8C6D32] bg-white shadow-lg ring-2 ring-[#8C6D32]'
+                          : 'border-[#12343B]/15 bg-white hover:border-[#8C6D32] hover:shadow-md'
                       }`}
                     >
                       <div className="flex items-start justify-between gap-3 mb-2">
                         <div>
-                          <h4 className="font-serif-luxury text-lg font-medium text-[#12343B]">
+                          <h4 className="font-serif-luxury text-xl font-bold text-[#0B2126]">
                             {isAr ? extra.nameAr : extra.name}
                           </h4>
-                          <p className="text-xs text-[#12343B]/70 font-light mt-1">
+                          <p className="text-xs sm:text-sm text-[#18383F] font-normal mt-1 leading-relaxed">
                             {isAr ? extra.descriptionAr : extra.description}
                           </p>
                         </div>
                         <div
-                          className={`w-5 h-5 rounded border flex items-center justify-center shrink-0 mt-1 transition-colors ${
+                          className={`w-5 h-5 rounded border-2 flex items-center justify-center shrink-0 mt-1 transition-colors ${
                             isChecked
-                              ? 'border-[#B99A5B] bg-[#B99A5B] text-white'
-                              : 'border-[#D8C7A6] bg-transparent'
+                              ? 'border-[#0B2126] bg-[#0B2126] text-white'
+                              : 'border-[#12343B]/40 bg-transparent'
                           }`}
                         >
                           {isChecked && <Check className="w-3.5 h-3.5" />}
                         </div>
                       </div>
-                      <div className="pt-3 border-t border-[#D8C7A6]/40 flex justify-between items-baseline text-xs">
-                        <span className="text-[#12343B]/60 uppercase tracking-wider">
+                      <div className="pt-3 border-t border-[#12343B]/15 flex justify-between items-baseline text-xs">
+                        <span className="text-[#18383F] uppercase tracking-wider font-bold">
                           {extra.id === 'extra-breakfast' ? (isAr ? 'لكل ضيف / يوم' : 'per guest / day') : (isAr ? 'للإقامة' : 'per stay')}
                         </span>
-                        <span className="font-serif-luxury text-base font-semibold text-[#12343B]">
+                        <span className="font-serif-luxury text-lg font-bold text-[#0B2126]">
                           +${extra.price}
                         </span>
                       </div>
@@ -389,18 +389,18 @@ export const BookingModal: React.FC<BookingModalProps> = ({
           {step === 4 && (
             <div className="space-y-6">
               <div>
-                <h3 className="font-serif-luxury text-2xl text-[#12343B] font-normal mb-1">
+                <h3 className="font-serif-luxury text-2xl sm:text-3xl text-[#0B2126] font-medium mb-1">
                   {t('guestDetailsTitle')}
                 </h3>
-                <p className="text-xs text-[#12343B]/70 font-light">
+                <p className="text-xs sm:text-sm text-[#18383F] font-normal">
                   {isAr ? 'يرجى تزويدنا ببيانات التواصل لتأكيد حجز إقامتكم الفاخرة' : 'Please provide primary guest particulars for private arrival coordination'}
                 </p>
               </div>
 
               {/* Form Grid */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 p-6 bg-white border border-[#D8C7A6]/50">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 p-6 bg-white border-2 border-[#12343B]/15 shadow-sm">
                 <div>
-                  <label className="block text-[10px] tracking-[0.2em] uppercase font-semibold text-[#12343B]/70 mb-1.5">
+                  <label className="block text-xs tracking-[0.2em] uppercase font-bold text-[#0B2126] mb-1.5">
                     {t('firstName')} *
                   </label>
                   <input
@@ -412,15 +412,15 @@ export const BookingModal: React.FC<BookingModalProps> = ({
                       if (errors.firstName) setErrors({ ...errors, firstName: '' });
                     }}
                     placeholder="Alexander"
-                    className={`w-full p-2.5 bg-[#F7F3EC] border text-xs focus:outline-none ${
-                      errors.firstName ? 'border-red-400' : 'border-[#D8C7A6]/60 focus:border-[#B99A5B]'
+                    className={`w-full p-3 bg-[#F7F3EC] border-2 text-xs font-semibold text-[#0B2126] focus:outline-none ${
+                      errors.firstName ? 'border-red-500' : 'border-[#12343B]/20 focus:border-[#0B2126]'
                     }`}
                   />
-                  {errors.firstName && <span className="text-[10px] text-red-500">{errors.firstName}</span>}
+                  {errors.firstName && <span className="text-[11px] text-red-600 font-bold">{errors.firstName}</span>}
                 </div>
 
                 <div>
-                  <label className="block text-[10px] tracking-[0.2em] uppercase font-semibold text-[#12343B]/70 mb-1.5">
+                  <label className="block text-xs tracking-[0.2em] uppercase font-bold text-[#0B2126] mb-1.5">
                     {t('lastName')} *
                   </label>
                   <input
@@ -432,15 +432,15 @@ export const BookingModal: React.FC<BookingModalProps> = ({
                       if (errors.lastName) setErrors({ ...errors, lastName: '' });
                     }}
                     placeholder="Sterling"
-                    className={`w-full p-2.5 bg-[#F7F3EC] border text-xs focus:outline-none ${
-                      errors.lastName ? 'border-red-400' : 'border-[#D8C7A6]/60 focus:border-[#B99A5B]'
+                    className={`w-full p-3 bg-[#F7F3EC] border-2 text-xs font-semibold text-[#0B2126] focus:outline-none ${
+                      errors.lastName ? 'border-red-500' : 'border-[#12343B]/20 focus:border-[#0B2126]'
                     }`}
                   />
-                  {errors.lastName && <span className="text-[10px] text-red-500">{errors.lastName}</span>}
+                  {errors.lastName && <span className="text-[11px] text-red-600 font-bold">{errors.lastName}</span>}
                 </div>
 
                 <div>
-                  <label className="block text-[10px] tracking-[0.2em] uppercase font-semibold text-[#12343B]/70 mb-1.5">
+                  <label className="block text-xs tracking-[0.2em] uppercase font-bold text-[#0B2126] mb-1.5">
                     {t('email')} *
                   </label>
                   <input
@@ -452,15 +452,15 @@ export const BookingModal: React.FC<BookingModalProps> = ({
                       if (errors.email) setErrors({ ...errors, email: '' });
                     }}
                     placeholder="alexander@domain.com"
-                    className={`w-full p-2.5 bg-[#F7F3EC] border text-xs focus:outline-none ${
-                      errors.email ? 'border-red-400' : 'border-[#D8C7A6]/60 focus:border-[#B99A5B]'
+                    className={`w-full p-3 bg-[#F7F3EC] border-2 text-xs font-semibold text-[#0B2126] focus:outline-none ${
+                      errors.email ? 'border-red-500' : 'border-[#12343B]/20 focus:border-[#0B2126]'
                     }`}
                   />
-                  {errors.email && <span className="text-[10px] text-red-500">{errors.email}</span>}
+                  {errors.email && <span className="text-[11px] text-red-600 font-bold">{errors.email}</span>}
                 </div>
 
                 <div>
-                  <label className="block text-[10px] tracking-[0.2em] uppercase font-semibold text-[#12343B]/70 mb-1.5">
+                  <label className="block text-xs tracking-[0.2em] uppercase font-bold text-[#0B2126] mb-1.5">
                     {t('phone')} *
                   </label>
                   <input
@@ -472,15 +472,15 @@ export const BookingModal: React.FC<BookingModalProps> = ({
                       if (errors.phone) setErrors({ ...errors, phone: '' });
                     }}
                     placeholder="+44 7911 123456"
-                    className={`w-full p-2.5 bg-[#F7F3EC] border text-xs focus:outline-none ${
-                      errors.phone ? 'border-red-400' : 'border-[#D8C7A6]/60 focus:border-[#B99A5B]'
+                    className={`w-full p-3 bg-[#F7F3EC] border-2 text-xs font-semibold text-[#0B2126] focus:outline-none ${
+                      errors.phone ? 'border-red-500' : 'border-[#12343B]/20 focus:border-[#0B2126]'
                     }`}
                   />
-                  {errors.phone && <span className="text-[10px] text-red-500">{errors.phone}</span>}
+                  {errors.phone && <span className="text-[11px] text-red-600 font-bold">{errors.phone}</span>}
                 </div>
 
                 <div className="sm:col-span-2">
-                  <label className="block text-[10px] tracking-[0.2em] uppercase font-semibold text-[#12343B]/70 mb-1.5">
+                  <label className="block text-xs tracking-[0.2em] uppercase font-bold text-[#0B2126] mb-1.5">
                     {t('specialNotes')}
                   </label>
                   <textarea
@@ -489,32 +489,32 @@ export const BookingModal: React.FC<BookingModalProps> = ({
                     value={specialRequests}
                     onChange={(e) => setSpecialRequests(e.target.value)}
                     placeholder={isAr ? 'أي متطلبات وصول، حميات غذائية، أو مناسبات خاصة...' : 'Dietary allergies, preferred champagne, yacht tender coordination...'}
-                    className="w-full p-2.5 bg-[#F7F3EC] border border-[#D8C7A6]/60 text-xs focus:outline-none focus:border-[#B99A5B]"
+                    className="w-full p-3 bg-[#F7F3EC] border-2 border-[#12343B]/20 text-xs font-medium text-[#0B2126] focus:outline-none focus:border-[#0B2126]"
                   />
                 </div>
               </div>
 
               {/* Order Cost Breakdown Box */}
-              <div className="p-5 bg-white border border-[#B99A5B]/40 space-y-2 text-xs">
-                <div className="flex justify-between text-[#12343B]/80">
+              <div className="p-6 bg-white border-2 border-[#12343B]/20 space-y-3 text-xs shadow-sm">
+                <div className="flex justify-between text-[#0B2126] font-medium text-sm">
                   <span>{isAr ? selectedRoom.nameAr : selectedRoom.name} ({nights} {t('nightsCount')} x ${selectedRoom.pricePerNight})</span>
-                  <span>${roomCost}</span>
+                  <span className="font-bold">${roomCost}</span>
                 </div>
                 {extrasCost > 0 && (
-                  <div className="flex justify-between text-[#12343B]/80">
+                  <div className="flex justify-between text-[#0B2126] font-medium text-sm">
                     <span>{t('extrasTotal')}</span>
-                    <span>+${extrasCost}</span>
+                    <span className="font-bold">+${extrasCost}</span>
                   </div>
                 )}
-                <div className="pt-2 border-t border-[#D8C7A6]/50 flex justify-between items-baseline font-semibold text-sm text-[#12343B]">
-                  <span>{t('estimatedTotal')}</span>
-                  <span className="font-serif-luxury text-2xl text-[#12343B]">${totalCost}</span>
+                <div className="pt-3 border-t border-[#12343B]/20 flex justify-between items-baseline font-bold text-sm text-[#0B2126]">
+                  <span className="text-base">{t('estimatedTotal')}</span>
+                  <span className="font-serif-luxury text-3xl text-[#0B2126] font-bold">${totalCost}</span>
                 </div>
               </div>
 
               {/* Demo Notice */}
-              <div className="p-3 bg-[#12343B]/5 border border-[#D8C7A6]/50 flex items-start gap-2 text-[11px] text-[#12343B]/75">
-                <Info className="w-4 h-4 text-[#B99A5B] shrink-0 mt-0.5" />
+              <div className="p-3.5 bg-[#0B2126]/5 border-2 border-[#12343B]/15 flex items-start gap-2.5 text-xs text-[#0B2126] font-medium">
+                <Info className="w-4 h-4 text-[#8C6D32] shrink-0 mt-0.5" />
                 <span>{t('demoNotice')}</span>
               </div>
             </div>
@@ -523,18 +523,18 @@ export const BookingModal: React.FC<BookingModalProps> = ({
           {/* STEP 5: Confirmation Screen */}
           {step === 5 && (
             <div className="py-8 flex flex-col items-center text-center space-y-6">
-              <div className="p-4 bg-[#B99A5B]/20 rounded-full text-[#B99A5B]">
-                <CheckCircle2 className="w-14 h-14" />
+              <div className="p-4 bg-[#8C6D32]/20 rounded-full text-[#8C6D32]">
+                <CheckCircle2 className="w-14 h-14 text-[#8C6D32]" />
               </div>
 
               <div>
-                <span className="text-[10px] tracking-[0.3em] uppercase text-[#B99A5B] font-semibold block mb-1">
-                  {t('bookingRef')}: <strong className="font-mono text-[#12343B] text-sm">{bookingRef}</strong>
+                <span className="text-xs tracking-[0.3em] uppercase text-[#8C6D32] font-bold block mb-1">
+                  {t('bookingRef')}: <strong className="font-mono text-[#0B2126] text-base">{bookingRef}</strong>
                 </span>
-                <h3 className="font-serif-luxury text-3xl sm:text-4xl text-[#12343B] font-normal">
+                <h3 className="font-serif-luxury text-3xl sm:text-4xl text-[#0B2126] font-bold">
                   {t('bookingConfirmed')}
                 </h3>
-                <p className="text-xs sm:text-sm text-[#12343B]/80 max-w-md mx-auto mt-2 leading-relaxed font-light">
+                <p className="text-xs sm:text-sm text-[#18383F] max-w-md mx-auto mt-2 leading-relaxed font-normal">
                   {isAr
                     ? `أهلاً بك يا ${firstName} ${lastName}. لقد تم تسجيل حجز إقامتك الاستثنائية في منتجع أزوريا الساحلي.`
                     : `Welcome, ${firstName} ${lastName}. Your private coastal retreat at AZUREA has been seamlessly provisioned.`}
@@ -542,33 +542,33 @@ export const BookingModal: React.FC<BookingModalProps> = ({
               </div>
 
               {/* Summary Card */}
-              <div className="w-full max-w-md bg-white border border-[#D8C7A6] p-6 text-left text-xs space-y-3 shadow-md">
-                <div className="flex justify-between border-b border-[#D8C7A6]/40 pb-2">
-                  <span className="text-[#12343B]/70">{t('selectedRoom')}</span>
-                  <strong className="text-[#12343B]">{isAr ? selectedRoom.nameAr : selectedRoom.name}</strong>
+              <div className="w-full max-w-md bg-white border-2 border-[#12343B]/20 p-6 text-left text-xs space-y-3 shadow-md text-[#0B2126]">
+                <div className="flex justify-between border-b border-[#12343B]/15 pb-2">
+                  <span className="text-[#18383F] font-medium">{t('selectedRoom')}</span>
+                  <strong className="text-[#0B2126] font-bold">{isAr ? selectedRoom.nameAr : selectedRoom.name}</strong>
                 </div>
-                <div className="flex justify-between border-b border-[#D8C7A6]/40 pb-2">
-                  <span className="text-[#12343B]/70">Dates</span>
-                  <span>{checkIn} → {checkOut} ({nights} {t('nightsCount')})</span>
+                <div className="flex justify-between border-b border-[#12343B]/15 pb-2">
+                  <span className="text-[#18383F] font-medium">Dates</span>
+                  <span className="font-bold">{checkIn} → {checkOut} ({nights} {t('nightsCount')})</span>
                 </div>
-                <div className="flex justify-between border-b border-[#D8C7A6]/40 pb-2">
-                  <span className="text-[#12343B]/70">{t('guests')}</span>
-                  <span>{guests} {t('adults')}</span>
+                <div className="flex justify-between border-b border-[#12343B]/15 pb-2">
+                  <span className="text-[#18383F] font-medium">{t('guests')}</span>
+                  <span className="font-bold">{guests} {t('adults')}</span>
                 </div>
                 {selectedExtras.length > 0 && (
-                  <div className="flex justify-between border-b border-[#D8C7A6]/40 pb-2">
-                    <span className="text-[#12343B]/70">{t('extrasTotal')}</span>
-                    <span>{selectedExtras.length} Selected</span>
+                  <div className="flex justify-between border-b border-[#12343B]/15 pb-2">
+                    <span className="text-[#18383F] font-medium">{t('extrasTotal')}</span>
+                    <span className="font-bold">{selectedExtras.length} Selected</span>
                   </div>
                 )}
-                <div className="flex justify-between pt-1 font-semibold text-sm">
+                <div className="flex justify-between pt-1 font-bold text-sm">
                   <span>{t('estimatedTotal')}</span>
-                  <span className="font-serif-luxury text-xl text-[#12343B]">${totalCost}</span>
+                  <span className="font-serif-luxury text-2xl text-[#0B2126] font-bold">${totalCost}</span>
                 </div>
               </div>
 
               {/* Demonstration Disclaimer */}
-              <div className="p-3 bg-amber-50 border border-amber-200 text-amber-800 text-[11px] max-w-md text-center rounded">
+              <div className="p-3.5 bg-amber-50 border-2 border-amber-300 text-amber-950 text-xs max-w-md text-center font-medium shadow-xs">
                 {isAr
                   ? 'تنويه: هذا نموذج واجهة أمامية (Frontend Demo) لمحفظة الأعمال الاحترافية. لم يتم سحب أي مبالغ.'
                   : 'Frontend Demo Portfolio Notice: This confirmation simulation does not process live payment or create a real-world hotel reservation.'}
@@ -578,14 +578,14 @@ export const BookingModal: React.FC<BookingModalProps> = ({
                 <button
                   type="button"
                   onClick={onClose}
-                  className="px-8 py-3 bg-[#12343B] text-[#F7F3EC] hover:bg-[#1a464f] border border-[#B99A5B] text-xs font-semibold tracking-[0.2em] uppercase transition-colors"
+                  className="px-8 py-3 bg-[#0B2126] text-white hover:bg-[#1a464f] border border-[#B99A5B] text-xs font-bold tracking-[0.2em] uppercase transition-colors shadow-md cursor-pointer"
                 >
                   {t('close')}
                 </button>
                 <button
                   type="button"
                   onClick={handleReset}
-                  className="px-6 py-3 bg-transparent border border-[#D8C7A6] hover:bg-white text-[#12343B] text-xs font-semibold tracking-[0.2em] uppercase transition-colors"
+                  className="px-6 py-3 bg-transparent border-2 border-[#0B2126] hover:bg-white text-[#0B2126] text-xs font-bold tracking-[0.2em] uppercase transition-colors cursor-pointer"
                 >
                   {t('reset')}
                 </button>
@@ -596,12 +596,12 @@ export const BookingModal: React.FC<BookingModalProps> = ({
 
         {/* Modal Bottom Actions (Steps 1 to 4) */}
         {step < 5 && (
-          <div className="p-4 sm:p-6 bg-[#FFFFFF] border-t border-[#D8C7A6]/50 flex items-center justify-between">
+          <div className="p-4 sm:p-6 bg-[#FFFFFF] border-t border-[#12343B]/15 flex items-center justify-between">
             {step > 1 ? (
               <button
                 type="button"
                 onClick={handlePrevStep}
-                className="px-5 py-2.5 border border-[#D8C7A6] hover:bg-[#F7F3EC] text-[#12343B] text-xs font-semibold tracking-wider uppercase transition-colors flex items-center gap-1.5"
+                className="px-5 py-2.5 border-2 border-[#0B2126] hover:bg-[#F7F3EC] text-[#0B2126] text-xs font-bold tracking-wider uppercase transition-colors flex items-center gap-1.5 cursor-pointer"
               >
                 {isRtl ? <ChevronRight className="w-4 h-4" /> : <ChevronLeft className="w-4 h-4" />}
                 <span>{t('back')}</span>
@@ -613,7 +613,7 @@ export const BookingModal: React.FC<BookingModalProps> = ({
             <button
               type="button"
               onClick={handleNextStep}
-              className="px-8 py-3 bg-[#12343B] hover:bg-[#1a464f] text-[#F7F3EC] border border-[#B99A5B] text-xs font-semibold tracking-[0.22em] uppercase transition-all duration-300 hover:shadow-lg flex items-center gap-2 cursor-pointer active:scale-95"
+              className="px-8 py-3.5 bg-[#0B2126] hover:bg-[#1a464f] text-white border border-[#B99A5B] text-xs font-bold tracking-[0.22em] uppercase transition-all duration-300 hover:shadow-lg flex items-center gap-2 cursor-pointer active:scale-95"
             >
               <span>{step === 4 ? t('confirmBooking') : t('continue')}</span>
               {isRtl ? <ChevronLeft className="w-4 h-4" /> : <ChevronRight className="w-4 h-4" />}

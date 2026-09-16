@@ -96,80 +96,80 @@ export const RoomModal: React.FC<RoomModalProps> = ({ room, onClose, onBookRoom 
         {/* Content Body */}
         <div className="p-6 sm:p-8 lg:p-10 space-y-8">
           {/* Header Title & Pricing */}
-          <div className="flex flex-col sm:flex-row sm:items-baseline justify-between gap-4 border-b border-[#D8C7A6]/50 pb-6">
+          <div className="flex flex-col sm:flex-row sm:items-baseline justify-between gap-4 border-b border-[#12343B]/20 pb-6">
             <div>
-              <h2 className="font-serif-luxury text-2xl sm:text-4xl text-[#12343B] font-normal tracking-wide">
+              <h2 className="font-serif-luxury text-2xl sm:text-4xl text-[#0B2126] font-semibold tracking-wide">
                 {language === 'ar' ? room.nameAr : room.name}
               </h2>
-              <p className="font-serif-luxury italic text-base sm:text-lg text-[#12343B]/80 mt-1">
+              <p className="font-serif-luxury italic text-base sm:text-lg text-[#18383F] font-medium mt-1">
                 {language === 'ar' ? room.taglineAr : room.tagline}
               </p>
             </div>
             <div className="text-left sm:text-right">
-              <span className="text-[11px] tracking-wider text-[#12343B]/70 uppercase block">
+              <span className="text-[11px] tracking-wider text-[#0B2126] font-bold uppercase block">
                 {t('from')}
               </span>
               <div className="flex items-baseline gap-1">
-                <span className="font-serif-luxury text-3xl sm:text-4xl text-[#12343B] font-semibold">
+                <span className="font-serif-luxury text-3xl sm:text-4xl text-[#0B2126] font-bold">
                   ${room.pricePerNight}
                 </span>
-                <span className="text-xs text-[#12343B]/70">{t('perNight')}</span>
+                <span className="text-xs text-[#0B2126] font-semibold">{t('perNight')}</span>
               </div>
             </div>
           </div>
 
           {/* Key Specs Bar */}
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 p-4 bg-white/60 border border-[#D8C7A6]/40 text-xs text-[#12343B]">
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 p-4 bg-white border border-[#12343B]/20 text-xs text-[#0B2126] shadow-xs">
             <div className="flex items-center gap-2.5">
-              <Users className="w-4 h-4 text-[#B99A5B] shrink-0" />
+              <Users className="w-4 h-4 text-[#8C6D32] shrink-0" />
               <div>
-                <p className="text-[10px] tracking-widest uppercase text-[#12343B]/60">{t('guestsLabel')}</p>
-                <p className="font-medium">{room.guests} {t('adults')}</p>
+                <p className="text-[10px] tracking-widest uppercase text-[#0B2126] font-bold">{t('guestsLabel')}</p>
+                <p className="font-bold text-[#0B2126]">{room.guests} {t('adults')}</p>
               </div>
             </div>
             <div className="flex items-center gap-2.5">
-              <Maximize className="w-4 h-4 text-[#B99A5B] shrink-0" />
+              <Maximize className="w-4 h-4 text-[#8C6D32] shrink-0" />
               <div>
-                <p className="text-[10px] tracking-widest uppercase text-[#12343B]/60">{t('sizeLabel')}</p>
-                <p className="font-medium">{room.size}</p>
+                <p className="text-[10px] tracking-widest uppercase text-[#0B2126] font-bold">{t('sizeLabel')}</p>
+                <p className="font-bold text-[#0B2126]">{room.size}</p>
               </div>
             </div>
             <div className="flex items-center gap-2.5">
-              <Eye className="w-4 h-4 text-[#B99A5B] shrink-0" />
+              <Eye className="w-4 h-4 text-[#8C6D32] shrink-0" />
               <div>
-                <p className="text-[10px] tracking-widest uppercase text-[#12343B]/60">{t('viewLabel')}</p>
-                <p className="font-medium">{language === 'ar' ? room.viewAr : room.view}</p>
+                <p className="text-[10px] tracking-widest uppercase text-[#0B2126] font-bold">{t('viewLabel')}</p>
+                <p className="font-bold text-[#0B2126]">{language === 'ar' ? room.viewAr : room.view}</p>
               </div>
             </div>
             <div className="flex items-center gap-2.5">
-              <BedDouble className="w-4 h-4 text-[#B99A5B] shrink-0" />
+              <BedDouble className="w-4 h-4 text-[#8C6D32] shrink-0" />
               <div>
-                <p className="text-[10px] tracking-widest uppercase text-[#12343B]/60">Bed</p>
-                <p className="font-medium truncate">{language === 'ar' ? room.bedTypeAr : room.bedType}</p>
+                <p className="text-[10px] tracking-widest uppercase text-[#0B2126] font-bold">Bed</p>
+                <p className="font-bold text-[#0B2126] truncate">{language === 'ar' ? room.bedTypeAr : room.bedType}</p>
               </div>
             </div>
           </div>
 
           {/* Narrative Description */}
           <div>
-            <h3 className="text-xs tracking-[0.25em] uppercase font-semibold text-[#B99A5B] mb-2">
+            <h3 className="text-xs tracking-[0.25em] uppercase font-bold text-[#8C6D32] mb-2">
               {language === 'ar' ? 'عن هذا الملاذ' : 'Sanctuary Overview'}
             </h3>
-            <p className="text-sm sm:text-base leading-relaxed text-[#12343B]/85">
+            <p className="text-sm sm:text-base leading-relaxed text-[#18383F] font-normal">
               {language === 'ar' ? room.descriptionAr : room.description}
             </p>
           </div>
 
           {/* Amenities & Privileges */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 pt-4 border-t border-[#D8C7A6]/50">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 pt-4 border-t border-[#12343B]/20">
             <div>
-              <h3 className="text-xs tracking-[0.25em] uppercase font-semibold text-[#12343B] mb-3">
+              <h3 className="text-xs tracking-[0.25em] uppercase font-bold text-[#0B2126] mb-3">
                 {t('amenitiesLabel')}
               </h3>
-              <ul className="space-y-2 text-xs sm:text-sm text-[#12343B]/80">
+              <ul className="space-y-2 text-xs sm:text-sm text-[#18383F] font-medium">
                 {room.amenities.map((item, idx) => (
                   <li key={idx} className="flex items-start gap-2">
-                    <Check className="w-4 h-4 text-[#B99A5B] shrink-0 mt-0.5" />
+                    <Check className="w-4 h-4 text-[#8C6D32] shrink-0 mt-0.5" />
                     <span>{language === 'ar' ? item.ar : item.en}</span>
                   </li>
                 ))}
@@ -177,13 +177,13 @@ export const RoomModal: React.FC<RoomModalProps> = ({ room, onClose, onBookRoom 
             </div>
 
             <div>
-              <h3 className="text-xs tracking-[0.25em] uppercase font-semibold text-[#12343B] mb-3">
+              <h3 className="text-xs tracking-[0.25em] uppercase font-bold text-[#0B2126] mb-3">
                 {t('featuresLabel')}
               </h3>
-              <ul className="space-y-2 text-xs sm:text-sm text-[#12343B]/80">
+              <ul className="space-y-2 text-xs sm:text-sm text-[#18383F] font-medium">
                 {room.features.map((item, idx) => (
                   <li key={idx} className="flex items-start gap-2">
-                    <Check className="w-4 h-4 text-[#B99A5B] shrink-0 mt-0.5" />
+                    <Check className="w-4 h-4 text-[#8C6D32] shrink-0 mt-0.5" />
                     <span>{language === 'ar' ? item.ar : item.en}</span>
                   </li>
                 ))}
@@ -192,16 +192,16 @@ export const RoomModal: React.FC<RoomModalProps> = ({ room, onClose, onBookRoom 
           </div>
 
           {/* Footer Actions */}
-          <div className="pt-6 border-t border-[#D8C7A6]/50 flex flex-col sm:flex-row items-center justify-between gap-4">
-            <div className="flex items-center gap-2 text-xs text-[#12343B]/70">
-              <CalendarCheck className="w-4 h-4 text-[#B99A5B]" />
+          <div className="pt-6 border-t border-[#12343B]/20 flex flex-col sm:flex-row items-center justify-between gap-4">
+            <div className="flex items-center gap-2 text-xs text-[#0B2126] font-semibold">
+              <CalendarCheck className="w-4 h-4 text-[#8C6D32]" />
               <span>{language === 'ar' ? 'متوفر للحجز الفوري مع إلغاء مرن' : 'Available for immediate reservation with flexible notice'}</span>
             </div>
             <div className="flex items-center gap-4 w-full sm:w-auto">
               <button
                 type="button"
                 onClick={onClose}
-                className="px-6 py-3 border border-[#D8C7A6] hover:bg-white text-[#12343B] text-xs font-semibold tracking-[0.2em] uppercase transition-colors"
+                className="px-6 py-3 border-2 border-[#0B2126] hover:bg-[#0B2126] hover:text-white text-[#0B2126] text-xs font-bold tracking-[0.2em] uppercase transition-colors"
               >
                 {t('close')}
               </button>
@@ -211,7 +211,7 @@ export const RoomModal: React.FC<RoomModalProps> = ({ room, onClose, onBookRoom 
                   onClose();
                   onBookRoom(room.id);
                 }}
-                className="flex-1 sm:flex-none px-8 py-3 bg-[#12343B] hover:bg-[#1a464f] text-[#F7F3EC] border border-[#B99A5B] text-xs font-semibold tracking-[0.22em] uppercase transition-all duration-300 hover:shadow-lg cursor-pointer"
+                className="flex-1 sm:flex-none px-8 py-3 bg-[#0B2126] hover:bg-[#1a464f] text-white border border-[#B99A5B] text-xs font-bold tracking-[0.22em] uppercase transition-all duration-300 hover:shadow-lg cursor-pointer shadow-sm"
               >
                 {t('bookThisRoom')}
               </button>

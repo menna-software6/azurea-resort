@@ -22,49 +22,49 @@ export const Hero: React.FC<HeroProps> = ({ onOpenBooking, onExplore, onSearchAv
           className="w-full h-full object-cover object-center scale-105 animate-[pulse_10s_ease-in-out_infinite]"
           fetchPriority="high"
         />
-        {/* Subtle Luxury Gradient Overlay */}
-        <div className="absolute inset-0 bg-gradient-to-t from-[#12343B]/90 via-[#12343B]/40 to-[#12343B]/60" />
-        <div className="absolute inset-0 bg-radial-gradient from-transparent via-[#12343B]/30 to-[#12343B]/70" />
+        {/* Luxury High-Contrast Vignette Gradient Overlay */}
+        <div className="absolute inset-0 bg-gradient-to-t from-[#0B2126] via-[#12343B]/60 to-[#0B2126]/80" />
+        <div className="absolute inset-0 bg-radial-gradient from-transparent via-[#12343B]/40 to-[#0B2126]/85" />
       </div>
 
       {/* Main Hero Content */}
       <div className="max-w-5xl mx-auto px-6 text-center text-white my-auto z-10 flex flex-col items-center">
-        {/* Subtle Gold Emblem Monogram */}
+        {/* Gold Emblem Monogram */}
         <div className="mb-6 flex items-center justify-center">
-          <div className="w-12 h-[1px] bg-[#B99A5B]/80" />
-          <span className="mx-4 text-[#D8C7A6] tracking-[0.4em] text-xs font-serif-luxury uppercase">
+          <div className="w-14 h-[1.5px] bg-[#D8C7A6]" />
+          <span className="mx-4 text-[#F7F3EC] tracking-[0.45em] text-xs sm:text-sm font-serif-luxury font-medium uppercase drop-shadow">
             {language === 'ar' ? 'الملاذ الخاص' : 'Exclusive Retreat'}
           </span>
-          <div className="w-12 h-[1px] bg-[#B99A5B]/80" />
+          <div className="w-14 h-[1.5px] bg-[#D8C7A6]" />
         </div>
 
-        {/* Brand Main Title */}
-        <h1 className="font-serif-luxury text-5xl sm:text-7xl lg:text-8xl tracking-[0.2em] font-light uppercase text-[#F7F3EC] drop-shadow-sm mb-3">
+        {/* Brand Main Title - Refined, editorial, thin serif typography */}
+        <h1 className="font-serif-luxury text-4xl sm:text-6xl lg:text-7xl tracking-[0.15em] font-light uppercase text-[#F7F3EC]/90 drop-shadow-[0_1px_2px_rgba(11,33,38,0.45)] mb-4 select-none">
           AZUREA
         </h1>
 
         {/* Brand Tagline */}
-        <p className="text-xs sm:text-sm tracking-[0.35em] uppercase text-[#D8C7A6] font-medium mb-8">
+        <p className="text-sm sm:text-base tracking-[0.4em] uppercase text-[#F7F3EC] font-semibold drop-shadow-[0_2px_10px_rgba(0,0,0,0.8)] mb-8">
           {language === 'ar' ? 'منتجع ساحلي خاص' : 'Private Coastal Resort'}
         </p>
 
         {/* Hero Overline & Luxury Headline */}
-        <div className="max-w-2xl mx-auto mb-10 space-y-3">
-          <p className="text-xs sm:text-sm tracking-[0.3em] uppercase text-[#B99A5B] font-semibold">
+        <div className="max-w-3xl mx-auto mb-10 space-y-4">
+          <p className="text-xs sm:text-sm tracking-[0.35em] uppercase text-[#D8C7A6] font-bold drop-shadow">
             {t('heroOverline')}
           </p>
-          <p className="text-lg sm:text-2xl lg:text-3xl font-serif-luxury italic text-[#F7F3EC]/90 font-normal leading-relaxed">
-            {t('heroTagline')}
+          <p className="text-xl sm:text-3xl lg:text-4xl font-serif-luxury italic text-white font-normal leading-relaxed drop-shadow-[0_2px_15px_rgba(0,0,0,0.7)]">
+            “{t('heroTagline')}”
           </p>
         </div>
 
-        {/* Hero Action Buttons */}
+        {/* Hero Action Buttons - Strong text/background contrast */}
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6 w-full max-w-md mx-auto">
           <button
             type="button"
             id="hero-book-stay-button"
             onClick={() => onOpenBooking()}
-            className="w-full sm:w-auto px-9 py-4 bg-[#B99A5B] text-[#12343B] hover:bg-[#d8c7a6] text-xs font-semibold tracking-[0.22em] uppercase transition-all duration-300 hover:shadow-xl cursor-pointer active:scale-95 whitespace-nowrap"
+            className="w-full sm:w-auto px-10 py-4 bg-[#B99A5B] hover:bg-[#d8c7a6] text-[#0B2126] text-xs font-bold tracking-[0.24em] uppercase transition-all duration-300 shadow-2xl hover:shadow-gold-glow cursor-pointer active:scale-95 whitespace-nowrap"
           >
             {t('bookYourStay')}
           </button>
@@ -72,7 +72,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenBooking, onExplore, onSearchAv
             type="button"
             id="hero-explore-button"
             onClick={onExplore}
-            className="w-full sm:w-auto px-9 py-4 bg-transparent text-[#F7F3EC] hover:text-white border border-[#D8C7A6]/60 hover:border-white text-xs font-medium tracking-[0.22em] uppercase transition-all duration-300 backdrop-blur-xs cursor-pointer active:scale-95 whitespace-nowrap"
+            className="w-full sm:w-auto px-10 py-4 bg-[#0B2126]/70 hover:bg-[#0B2126] text-white hover:text-white border-2 border-white/70 hover:border-white text-xs font-bold tracking-[0.24em] uppercase transition-all duration-300 backdrop-blur-sm cursor-pointer active:scale-95 whitespace-nowrap shadow-xl"
           >
             {t('exploreAzurea')}
           </button>
