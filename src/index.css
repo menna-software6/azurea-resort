@@ -1,0 +1,67 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --color-ivory: #F7F3EC;
+    --color-ocean: #12343B;
+    --color-sand: #D8C7A6;
+    --color-gold: #B99A5B;
+    --color-white: #FFFFFF;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background-color: #F7F3EC;
+    color: #12343B;
+  }
+
+  /* When RTL (Arabic), prioritize Alexandria */
+  [dir="rtl"] {
+    font-family: 'Alexandria', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  }
+}
+
+.font-serif-luxury {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+}
+
+[dir="rtl"] .font-serif-luxury {
+  font-family: 'Alexandria', 'Cormorant Garamond', Georgia, serif;
+}
+
+.font-sans-luxury {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+[dir="rtl"] .font-sans-luxury {
+  font-family: 'Alexandria', 'Inter', sans-serif;
+}
+
+/* Custom subtle scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #F7F3EC;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #D8C7A6;
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #B99A5B;
+}
+
+/* Luxury image filter subtle glow */
+.luxury-image-shadow {
+  box-shadow: 0 20px 40px -15px rgba(18, 52, 59, 0.12);
+}
+
+.gold-glow {
+  box-shadow: 0 0 25px -5px rgba(185, 154, 91, 0.25);
+}

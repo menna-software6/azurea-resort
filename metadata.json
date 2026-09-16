@@ -1,0 +1,6 @@
+{
+  "name": "AZUREA | Private Coastal Resort",
+  "description": "A private coastal retreat where Mediterranean beauty meets quiet luxury",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
